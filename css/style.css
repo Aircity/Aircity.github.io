@@ -1754,14 +1754,14 @@ footer {
 }
 #footer .lover {
   height: 14em;
-  margin: 2em auto;
+  margin: 1.4em auto;
   display: none;
 }
 @media only screen and (min-width: 768px) {
   #footer .lover {
     display: block;
     float: left;
-    position: relative;
+    position: absolute;
   }
 }
 #footer .lover img {
@@ -1807,8 +1807,6 @@ footer {
   margin: 0.5em auto;
   text-align: center;
   color: #fff;
-  position: absolute;
-  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .info {
@@ -1884,7 +1882,7 @@ footer {
 }
 @media only screen and (min-width: 768px) {
   .copyright {
-    float: left;
+    margin-bottom: 0.6em;
   }
 }
 .copyright a {
