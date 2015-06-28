@@ -1734,8 +1734,9 @@ footer {
 @media only screen and (min-width: 768px) {
   #footer .line {
     width: 10em;
-    float: right;
-    position: relative;
+    right: 0;
+    top: 0;
+    position: absolute;
   }
 }
 #footer .line span {
@@ -1762,6 +1763,8 @@ footer {
     display: block;
     float: left;
     position: absolute;
+    left: 0;
+    top: 0;
   }
 }
 #footer .lover img {
