@@ -474,7 +474,7 @@ header nav {
   float: left;
   width: 100%;
   font-size: 112.5%;
-  padding-top: 3em;
+  padding-top: 0.5em;
   max-height: 0.01em;
   -webkit-transition: max-height 1s ease-out;
   -moz-transition: max-height 1s ease-out;
@@ -484,14 +484,16 @@ header nav {
 }
 @media only screen and (min-width: 568px) {
   header nav {
-    width: 70%;
+    width: 100%;
+    float: left;
   }
 }
 @media only screen and (min-width: 1070px) {
   header nav {
     float: right;
     width: auto;
-    margin-top: 1em;
+    margin-top: 3em;
+    padding-top: 0em;
     max-height: none;
   }
 }
