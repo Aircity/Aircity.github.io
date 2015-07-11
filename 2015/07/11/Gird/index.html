@@ -4,12 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>beta版哟 | Aircity</title>
+    <title>Gird， 表格通过主表确认副表内容 | Aircity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Aircity">
     
-    <meta name="description" content="">
+    <meta name="description" content="html主体
+
+javascript内容//先通过jqGrid建两个表对象//用到的function—两个数组，排除已经在附表中的数组function subArray(a, b) {
+var result = [];
+for (var i in a) {
+    if ($.inArray(a[i">
     
     
     
@@ -77,15 +82,15 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/27/beta/" title="beta版哟" itemprop="url">beta版哟</a>
+      <a href="/2015/07/11/Gird/" title="Gird， 表格通过主表确认副表内容" itemprop="url">Gird， 表格通过主表确认副表内容</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://nichunfeng.lofter.com" title="Aircity">Aircity</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-06-27T09:15:03.183Z" itemprop="datePublished">2015-06-27</time>
-    更新日期:<time datetime="2015-06-27T09:15:03.183Z" itemprop="dateModified">2015-06-27</time>
+    <time datetime="2015-07-11T11:05:53.725Z" itemprop="datePublished">2015-07-11</time>
+    更新日期:<time datetime="2015-07-11T11:05:53.725Z" itemprop="dateModified">2015-07-11</time>
     
   </p>
 </header>
@@ -97,17 +102,45 @@ var _hmt = _hmt || [];
 		
 		</div>
 		
-		<p><img src="/img/398.png" alt=""></p>
+		<ol>
+<li><p>html主体</p>
+</li>
+<li><p>javascript内容<br>//先通过jqGrid建两个表对象<br>//用到的function—两个数组，排除已经在附表中的数组<br>function subArray(a, b) {</p>
+<pre><code><span class="keyword">var</span> <span class="literal">result</span> = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a) {
+    <span class="keyword">if</span> ($.inArray(a[i], b) == -<span class="number">1</span>)
+        <span class="literal">result</span>.push(a[i]);
+}
+<span class="keyword">return</span> <span class="literal">result</span>;
+</code></pre><p> }<br> //提交副表的主键<br>$(“#application”).submit(function (e) {<br> e.preventDefault();<br> var formData = $(“#application”).serialize();<br> var tableData = $(“#sublist”).jqGrid(‘getDataIDs’);<br> console.log(formData);<br> console.log(tableData);<br>});<br>//在colModel中设定key:true确定主键。默认是一个自增量<br>//name: ‘reclaimStorageNo’,<br>//sorttype:’integer’,<br>//key:true,<br>//searchoptions:{sopt:[‘cn’],readonly: false,<br>//dataEvents: [{ type: ‘keypress’,<br>//fn: function (e) {this.value=this.value.replace(/\s+/g,””); } }]}<br>//所选需要的数据填到副表<br>$(“#moveToRight”).click(function () {<br> var group = jQuery(“#list”).jqGrid(‘getGridParam’, ‘selarrrow’);<br> var subgroup = jQuery(“#sublist”).jqGrid(‘getDataIDs’);<br> //剔除数组中重复的部分<br> //do something<br> group = subArray(group, subgroup);<br> var dataRow = [];<br> for (var i = 0; i &lt; group.length; i++) {</p>
+<pre><code><span class="variable"><span class="keyword">var</span> index</span> = group[i];
+<span class="variable"><span class="keyword">var</span> reclaimStorageNo</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"reclaimStorageNo"</span>);
+<span class="variable"><span class="keyword">var</span> productBrand</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"productBrand"</span>);
+<span class="variable"><span class="keyword">var</span> productModel</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"productModel"</span>);
+<span class="variable"><span class="keyword">var</span> row</span> = {};
+row.reclaimStorageNo = reclaimStorageNo;
+row.productBrand = productBrand;
+dataRow.push(row);
+</code></pre><p> }<br> //通过dataRow在副表填数据<br> $(“#sublist”).jqGrid(“addRowData”, “reclaimStorageNo”, dataRow, “first”);<br> //清空所选<br> $(“#list”).jqGrid(“resetSelection”);<br> //按需要排序<br> $(“#sublist”).sortGrid(‘reclaimStorageNo’, true);<br>});<br>//将副表不需要的数据移回<br>jQuery(“#moveToLeft”).click(function () {<br> var selectedRowIds = $(“#sublist”).jqGrid(“getGridParam”, “selarrrow”);<br> var len = selectedRowIds.length;<br> for (var i = 0; i &lt; len; i++) {</p>
+<pre><code>$<span class="params">(<span class="string">"#sublist"</span>)</span>.jqGrid<span class="params">(<span class="string">"delRowData"</span>, selectedRowIds[<span class="number">0</span>])</span>;
+</code></pre><p> }<br>});</p>
+</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/front-end/">front-end</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://nichunfeng.lofter.com/2015/06/27/beta/" data-title="beta版哟 | Aircity" data-tsina="null" class="share clearfix">
+  <div data-url="http://nichunfeng.lofter.com/2015/07/11/Gird/" data-title="Gird， 表格通过主表确认副表内容 | Aircity" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -117,18 +150,18 @@ var _hmt = _hmt || [];
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/07/11/song/" title="【填词】别（悲しみ雪に眠る）">
+ <a href="/2015/07/11/svg/" title="svg">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  【填词】别（悲しみ雪に眠る）</span>
+  svg</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/06/27/hello-world/"  title="守一座空城，爱一世愚人">
+<a href="/2015/07/11/song/"  title="【填词】别（悲しみ雪に眠る）">
  <strong>NEXT:</strong><br/> 
- <span>守一座空城，爱一世愚人
+ <span>【填词】别（悲しみ雪に眠る）
 </span>
 </a>
 </div>
