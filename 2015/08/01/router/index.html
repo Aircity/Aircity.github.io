@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>svg | Aircity</title>
+    <title>node路由 | Aircity</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Aircity">
     
-    <meta name="description" itemprop="description" content="移值Snap.svg的官方例子。单击红色圆可见效果。">
+    <meta name="description" itemprop="description" content="懒得配路由。">
     
     
     
@@ -72,131 +72,43 @@ var _hmt = _hmt || [];
 
     </header>
     <div id="container">
-      <div id="main" class="module" itemscope itemprop="blogPost">
+      <div id="main" class="post" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/11/svg/" title="svg" itemprop="url">svg</a>
+      <a href="/2015/08/01/router/" title="node路由" itemprop="url">node路由</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://nichunfeng.lofter.com" title="Aircity">Aircity</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-07-11T14:02:30.569Z" itemprop="datePublished">2015-07-11</time>
-    更新日期:<time datetime="2015-07-11T14:02:30.569Z" itemprop="dateModified">2015-07-11</time>
+    <time datetime="2015-08-01T10:36:06.125Z" itemprop="datePublished">2015-08-01</time>
+    更新日期:<time datetime="2015-08-01T10:36:06.125Z" itemprop="dateModified">2015-08-01</time>
     
   </p>
 </header>
 	<div class="article-content">
-        <style>
-.article-content {
-    background: #4db6ac;
-    text-align:center;
-}
-#svg {
-    width:300px;
-    height:300px;
-    border-radius:150px;
-}
-</style>   
-
-<svg id="svg"></svg> 
-   
-<script src="/script/snap.svg-min.js"></script>
-
-<script>
-window.onload = function () {
-    var svg = Snap("#svg");
-    Snap.load("/img/define/map.svg", function (f) {
-        function getShift(dot) {
-            return "t" + (150 - dot.x) + "," + (150 - dot.y);
-        }
-        var gr = f.select("g"),
-            wrd = f.select("#world").attr({fill: "#fff"}),
-            syd = f.select("#sydney").attr({fill: "red"}),
-            msk = f.select("#san_francisco").attr({fill: "red"}),
-            pth = f.select("#flight"),
-            pln = f.select("#plane"),
-            top = svg.g();
-        top.attr({
-            mask: svg.rect(0, 0, 300, 300).attr({
-                fill: "r(.5,.5,.25)#fff-#000"
-            })
-        });
-        top.add(gr);
-        var click = top.text(150, 170, "click!").attr({
-            font: "20px Source Sans Pro, sans-serif",
-            fill: "#fff"
-        });
-        pth.attr({
-            display: "none"
-        });
-        pln = gr.g(pln, pln.clone());
-        pln.attr({
-            display: "none"
-        });
-        pln[0].attr({
-            stroke: "#fff",
-            strokeWidth: 2
-        });
-        gr.attr({
-            transform: getShift({
-                x: syd.attr("cx"),
-                y: syd.attr("cy")
-            })
-        });
-        var flight = gr.path().attr({
-            fill: "none",
-            stroke: "red",
-            strokeWidth: 3,
-            strokeDasharray: "5 3"
-        }).insertBefore(pln);
-        window.onclick = function () {
-            pln.attr({
-                display: ""
-            });
-            click.attr({
-                display: "none"
-            });
-            var flag,
-                len = Snap.path.getTotalLength(pth.attr("d"));
-            Snap.animate(0, len, function (l) {
-                // Safari bug workaround: forcing redraw
-                svg.attr({width: 100 + (flag = !flag ? 1e-5 : 0) + "%"});
-                //
-                var dot = pth.getPointAtLength(l);
-                flight.attr({
-                    d: pth.getSubpath(0, l)
-                });
-                pln.attr({
-                    transform: "t" + [dot.x, dot.y] +
-                               "r" + (dot.alpha - 90)
-                });
-                gr.attr({
-                    transform: getShift(dot)
-                });
-            }, 10000);
-        };
-    });
-};
-</script>
-
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>针对利用node和gulp/grunt单目录静态输出，<br>只在nodeJS下develop的情况，so懒得配路由。。。</p>
+<p>router.get(‘*’, function(request, response, next) {<br>  var fileName = path.basename(request.url,’.html’);<br>  response.render(fileName);<br>});</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/front-end/">front-end</a>
-  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://nichunfeng.lofter.com/2015/07/11/svg/" data-title="svg | Aircity" data-tsina="null" class="share clearfix">
+  <div data-url="http://nichunfeng.lofter.com/2015/08/01/router/" data-title="node路由 | Aircity" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -206,18 +118,18 @@ window.onload = function () {
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/07/11/font/" title="css中文字体">
+ <a href="/2015/08/01/git/" title="git branch">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  css中文字体</span>
+  git branch</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/07/11/beta/"  title="beta版哟">
+<a href="/2015/07/11/font/"  title="css中文字体">
  <strong>NEXT:</strong><br/> 
- <span>beta版哟
+ <span>css中文字体
 </span>
 </a>
 </div>
@@ -229,8 +141,13 @@ window.onload = function () {
 	<div class="ds-thread"></div>
 </section>
 
-</div> 
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -314,6 +231,9 @@ window.onload = function () {
 		</p>
 </div>
 </footer>
+    <div id="top" style="position:fixed;bottom:100px;right:30px;cursor: pointer;">
+        <a title="top"><img src="/img/top.png"/ width="50px"></a>
+    </div>
     <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -405,10 +325,91 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+<script type="text/javascript">
+  (function($) {
+  var upperLimit = 1000;
+  var scrollElem = $('#top');
+  var scrollSpeed = 500;
+  scrollElem.hide();
+  $(window).scroll(function () {
+  var scrollTop = $(document).scrollTop();
+  if ( scrollTop > upperLimit ) {
+  $(scrollElem).stop().fadeTo(300, 1);
+  }
+  else{
+    $(scrollElem).stop().fadeTo(300, 0);
+  }
+});
+$(scrollElem).click(function(){
+$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+});
+})(jQuery);
+</script> 
 
 
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" media="screen" type="text/css">
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
 
   </body>
- </html>
+</html>
