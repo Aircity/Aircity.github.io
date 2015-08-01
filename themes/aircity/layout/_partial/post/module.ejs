@@ -1,0 +1,11 @@
+<div id="main" class="<%= item.layout %>" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<%- partial('header') %>
+	<div class="article-content">
+        <%- partial('../../_define/'+item.define) %>
+	</div>
+		<%- partial('footer') %>   	       
+	</article>
+	<%- partial('pagination') %>
+	<%- partial('comment') %>
+</div> 

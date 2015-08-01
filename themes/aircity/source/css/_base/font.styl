@@ -1,0 +1,16 @@
+/*! custom Font*/
+font-url(filename)
+  return '../font/' + filename
+
+customfont(family, filename)
+  @font-face
+    font-family family
+    font-weight normal
+    font-style normal
+    src url(font-url(filename + '.eot'))
+    src url(font-url(filename + '.eot?#iefix')) format('embedded-opentype'),
+    url(font-url(filename + '.svg#'+ family)) format('svg'), 
+    url(font-url(filename + '.woff')) format('woff'), 
+    url(font-url(filename + '.ttf')) format('truetype')    
+    
+customfont(font-custom-family,font-custom-filename)
