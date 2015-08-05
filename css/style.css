@@ -140,18 +140,22 @@ hr.ookiaks-jr:after {
 }
 #header h1 {
   font-weight: normal;
-  font-size: 2.5em;
+  font-size: 3em;
   line-height: 1;
+  font-family: 'Tangerine', cursive;
 }
 #header h2 {
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 1.32em;
   line-height: 1;
   margin-top: 10px;
+  font-family: 'Tangerine', cursive;
 }
 #header #main-nav {
   font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 2.5em;
+  font-size: 112.5%;
+  margin-top: 2em;
 }
 #header #main-nav ul {
   list-style: none;
@@ -180,7 +184,10 @@ article.photo .icon:before {
 article.link .icon:before {
   content: '\f0c1';
 }
-article.link .title a:after {
+article.module .icon:before {
+  content: '\f005';
+}
+article.module .title a:after {
   content: '\f08e';
   color: #999;
   font: 12px FontAwesome;
@@ -568,6 +575,133 @@ article footer .addthis iframe {
   padding-left: 10px;
   font-family: FontAwesome;
 }
+footer {
+  margin-top: 1em;
+  background: color-footer;
+  padding: 0 2% 0.5em;
+  position: relative;
+}
+#foo {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+#foo .line {
+  width: 100%;
+  height: 12em;
+  margin: 0 auto;
+}
+@media mini {
+  #foo .line {
+    width: 10em;
+    right: 0;
+    top: 0;
+    position: absolute;
+  }
+}
+#foo .line span {
+  display: block;
+  width: 0.5em;
+  height: 4.25em;
+  border-right: 0.125em solid #fff;
+  margin: 0 auto;
+}
+@media mini {
+  #foo .line span {
+    position: absolute;
+    left: 3em;
+    margin: 0 0 1.5em;
+  }
+}
+#foo .lover {
+  height: 14em;
+  margin: 1.4em auto;
+  display: none;
+}
+@media mini {
+  #foo .lover {
+    display: block;
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+#foo .lover img {
+  height: 100%;
+  width: auto;
+}
+#foo {
+  background: #212121 none repeat scroll 0 0;
+  margin-top: 1em;
+  position: relative;
+  color: #fff;
+  margin-bottom: 1em;
+}
+.author {
+  width: 6.875em;
+  height: 6.875em;
+  margin: 0 auto;
+  background: no-repeat url("/img/author.jpg") left top;
+  -webkit-background-size: 6.875em 6.875em;
+  -moz-background-size: 6.875em 6.875em;
+  background-size: 6.875em 6.875em;
+  -webkit-border-radius: 3.4375em;
+  border-radius: 3.4375em;
+}
+@media mini {
+  .author {
+    position: absolute;
+    top: 6em;
+    margin: 0 0 1.5em;
+  }
+}
+#foo .author {
+  -webkit-transition: -webkit-transform 2s ease-out;
+  -moz-transition: -moz-transform 2s ease-out;
+  -o-transition: -o-transform 2s ease-out;
+  -ms-transition: -ms-transform 2s ease-out;
+  transition: transform 2s ease-out;
+}
+#foo .author:hover {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+.info {
+  font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.65;
+  margin: 0.5em auto;
+  text-align: center;
+  color: color-white;
+}
+@media mini {
+  .info {
+    margin: 4.5em auto 2em auto;
+  }
+}
+.copyright {
+  font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 0.6em;
+  width: 100%;
+  color: color-white;
+  text-align: center;
+  margin-bottom: 1em;
+}
+@media mini {
+  .copyright {
+    margin-bottom: 0.6em;
+  }
+}
+.copyright a {
+  color: color-white;
+}
+.copyright a:hover {
+  color: color-blue;
+}
 .archive-title {
   color: #999;
   font-weight: normal;
@@ -699,6 +833,25 @@ article footer .addthis iframe {
 #sidebar .duoshuo_recent_comments .ds-recent-comments>li:first-child {
   padding-top: 0 !important;
   border-top: none !important;
+}
+#sidebar .about_me .entry {
+  text-align: center;
+}
+#sidebar .about_me .entry .author {
+  width: 6.875em;
+  height: 6.875em;
+  background: no-repeat url("/img/author.jpg") left top;
+  -webkit-background-size: 6.875em 6.875em;
+  -moz-background-size: 6.875em 6.875em;
+  background-size: 6.875em 6.875em;
+  -webkit-border-radius: 3.4375em;
+  border-radius: 3.4375em;
+  -webkit-transition: -webkit-transform 2s ease-out;
+  -moz-transition: -moz-transform 2s ease-out;
+  -o-transition: -o-transform 2s ease-out;
+  -ms-transition: -ms-transform 2s ease-out;
+  transition: transform 2s ease-out;
+  display: inline-block;
 }
 #footer {
   color: #999;
