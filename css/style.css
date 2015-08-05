@@ -20,18 +20,6 @@ body {
   font-size: 14px;
   text-shadow: 0 0 1px transparent;
 }
-@media screen and (max-width: 1260px) {
-  body {
-    margin: 0 30px;
-  }
-}
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 1em;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
 h1,
 h2,
 h3,
@@ -82,6 +70,27 @@ a:hover {
     width: 100%;
   }
 }
+.inner {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+/* Firefox */
+  -webkit-box-sizing: border-box;
+/* Safari */
+}
+@media screen and (max-width: 1260px) {
+  .inner {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .inner {
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 #main-col {
   width: 900px;
 }
@@ -129,14 +138,26 @@ hr.ookiaks-jr:after {
 }
 #header {
   text-shadow: 0 0 1px #fff;
-  margin: 50px auto;
+  padding: 50px 0;
+  background-color: #4db6ac;
+  margin-bottom: 2em;
 }
 #header a {
-  color: #999;
+  color: #fff;
 }
 #header a:hover {
-  color: #258fb8;
+  color: #fff;
   text-decoration: none;
+}
+@media screen and (max-width: 1260px) {
+  #header {
+    padding: 35px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  #header {
+    padding: 15px 0;
+  }
 }
 #header h1 {
   font-weight: normal;
@@ -155,7 +176,7 @@ hr.ookiaks-jr:after {
 #header #main-nav {
   font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 2.5em;
-  font-size: 112.5%;
+  font-size: 114%;
   margin-top: 2em;
 }
 #header #main-nav ul {
@@ -164,6 +185,7 @@ hr.ookiaks-jr:after {
 #header #main-nav ul li {
   float: left;
   margin-left: 30px;
+  text-shadow: 0 0 1px #aaa;
 }
 article {
   -webkit-box-shadow: 1px 2px 3px #ddd;
