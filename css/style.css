@@ -146,10 +146,11 @@ hr.ookiaks-jr:after {
 }
 #header h2 {
   font-weight: normal;
-  font-size: 1.32em;
+  font-size: 1.28em;
   line-height: 1;
   margin-top: 10px;
   font-family: 'Tangerine', cursive;
+  text-shadow: 3px 3px 3px #aaa;
 }
 #header #main-nav {
   font-family: Arial, "Hiragino Sans GB", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
