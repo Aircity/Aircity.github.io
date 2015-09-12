@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>svg | Aircity</title>
+  <title>归档：2015/9 | Aircity</title>
   <meta name="author" content="Aircity">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="svg"/>
+  
   <meta property="og:site_name" content="Aircity"/>
 
   
@@ -72,152 +72,97 @@
       </div>
   </header>      
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="module">
-  
-    <div class="gallery">
-  <div class="photoset">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title">2015/9</h2>
+
+
+  <div class="archive">
     
-      <img src="">
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:21:22.845Z"><a href="/2015/09/12/goto/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/goto/">如如不动</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.152Z"><a href="/2015/09/12/smart/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/smart/">母语</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.152Z"><a href="/2015/09/12/router/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/router/">node路由</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.152Z"><a href="/2015/09/12/git/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/git/">git branch</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.144Z"><a href="/2015/09/12/font/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/font/">css中文字体</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.140Z"><a href="/2015/09/12/Gird/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/Gird/">Gird， 表格通过主表确认副表内容</a></h1>
+            
+          </header>
+        </div>
+      </article>
+    
+      <article class="post">
+        <div class="post-content">
+          <header>
+            <div class="icon"></div>
+            <time datetime="2015-09-12T06:05:32.136Z"><a href="/2015/09/12/song/">2015-09-12</a></time>
+            
+              <h1 class="title"><a href="/2015/09/12/song/">【填词】别（悲しみ雪に眠る）</a></h1>
+            
+          </header>
+        </div>
+      </article>
     
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-08-02T14:04:29.846Z"><a href="/2015/08/02/svg/">2015-08-02</a></time>
-          
-     <h1>
-      
-  
-    <h1 class="title">svg</h1>
-  
-         
-     </h1>
-    </header>
-    <div class="entry">
-        <p></p>
-        <style>
-article .post-content .entry {
-    background: #4db6ac;
-    text-align:center;
-}
-#svg {
-    width:300px;
-    height:300px;
-    border-radius:150px;
-}
-</style>   
-
-<svg id="svg"></svg> 
-   
-<script src="/script/snap.svg-min.js"></script>
-
-<script>
-window.onload = function () {
-    var svg = Snap("#svg");
-    Snap.load("/img/define/map.svg", function (f) {
-        function getShift(dot) {
-            return "t" + (150 - dot.x) + "," + (150 - dot.y);
-        }
-        var gr = f.select("g"),
-            wrd = f.select("#world").attr({fill: "#fff"}),
-            syd = f.select("#sydney").attr({fill: "red"}),
-            msk = f.select("#san_francisco").attr({fill: "red"}),
-            pth = f.select("#flight"),
-            pln = f.select("#plane"),
-            top = svg.g();
-        top.attr({
-            mask: svg.rect(0, 0, 300, 300).attr({
-                fill: "r(.5,.5,.25)#fff-#000"
-            })
-        });
-        top.add(gr);
-        var click = top.text(150, 170, "click!").attr({
-            font: "20px Source Sans Pro, sans-serif",
-            fill: "#fff"
-        });
-        pth.attr({
-            display: "none"
-        });
-        pln = gr.g(pln, pln.clone());
-        pln.attr({
-            display: "none"
-        });
-        pln[0].attr({
-            stroke: "#fff",
-            strokeWidth: 2
-        });
-        gr.attr({
-            transform: getShift({
-                x: syd.attr("cx"),
-                y: syd.attr("cy")
-            })
-        });
-        var flight = gr.path().attr({
-            fill: "none",
-            stroke: "red",
-            strokeWidth: 3,
-            strokeDasharray: "5 3"
-        }).insertBefore(pln);
-        window.onclick = function () {
-            pln.attr({
-                display: ""
-            });
-            click.attr({
-                display: "none"
-            });
-            var flag,
-                len = Snap.path.getTotalLength(pth.attr("d"));
-            Snap.animate(0, len, function (l) {
-                // Safari bug workaround: forcing redraw
-                svg.attr({width: 100 + (flag = !flag ? 1e-5 : 0) + "%"});
-                //
-                var dot = pth.getPointAtLength(l);
-                flight.attr({
-                    d: pth.getSubpath(0, l)
-                });
-                pln.attr({
-                    transform: "t" + [dot.x, dot.y] +
-                               "r" + (dot.alpha - 90)
-                });
-                gr.attr({
-                    transform: getShift(dot)
-                });
-            }, 10000);
-        };
-    });
-};
-</script>
-
-    </div>
-    <footer>
-      
-        
-        
-  
-  <div class="tags">
-    <a href="/tags/front-end/">front-end</a>
-  </div>
-
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-
-
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
@@ -293,58 +238,64 @@ var cale = new Calendar("idCalendar", {
         // }
 
         
-            var postdate = new Date("Wed Aug 05 2015 13:44:51 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/Gird/' title='Gird， 表格通过主表确认副表内容'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/Gird/' title='Gird， 表格通过主表确认副表内容'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sun Aug 02 2015 22:04:29 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/02/svg/' title='svg'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/svg/' title='svg'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 13:45:20 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/song/' title='【填词】别（悲しみ雪に眠る）'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/song/' title='【填词】别（悲しみ雪に眠る）'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 13:45:54 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/smart/' title='母语'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/smart/' title='母语'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Aug 01 2015 18:36:06 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/01/router/' title='node路由'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/router/' title='node路由'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Jul 11 2015 21:57:57 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/07/11/hello-world/' title='守一座空城，爱一世愚人'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/hello-world/' title='守一座空城，爱一世愚人'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Aug 01 2015 18:37:43 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/01/git/' title='git branch'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/git/' title='git branch'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sun Aug 02 2015 21:58:14 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/02/font/' title='css中文字体'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/font/' title='css中文字体'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 14:29:16 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/beta/' title='beta版哟'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/beta/' title='beta版哟'>" + day + "</a>";
+            }
+    
+            var postdate = new Date("Sat Sep 12 2015 14:21:22 GMT+0800");
+            if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
+                var day = postdate.getDate();
+                this.Days[day].innerHTML = "<a href='/2015/09/12/goto/' title='如如不动'>" + day + "</a>";
             }
     
 
@@ -371,6 +322,8 @@ $$("idCalendarNext").onclick = function(){ cale.NextMonth(); }
   
     <li><a href="/tags/填词/">填词</a><small>1</small></li>
   
+    <li><a href="/tags/江湖/">江湖</a><small>1</small></li>
+  
     <li><a href="/tags/空城/">空城</a><small>1</small></li>
   
   </ul>
@@ -383,39 +336,43 @@ $$("idCalendarNext").onclick = function(){ cale.NextMonth(); }
   <ul class="entry">
     
       <li>
-        <a href="/2015/08/05/beta/">beta版哟</a>
+        <a href="/2015/09/12/goto/">如如不动</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/smart/">母语</a>
+        <a href="/2015/09/12/smart/">母语</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/song/">【填词】别（悲しみ雪に眠る）</a>
+        <a href="/2015/09/12/router/">node路由</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/Gird/">Gird， 表格通过主表确认副表内容</a>
+        <a href="/2015/09/12/git/">git branch</a>
       </li>
     
       <li>
-        <a href="/2015/08/02/svg/">svg</a>
+        <a href="/2015/09/12/font/">css中文字体</a>
       </li>
     
       <li>
-        <a href="/2015/08/02/font/">css中文字体</a>
+        <a href="/2015/09/12/Gird/">Gird， 表格通过主表确认副表内容</a>
       </li>
     
       <li>
-        <a href="/2015/08/01/git/">git branch</a>
+        <a href="/2015/09/12/song/">【填词】别（悲しみ雪に眠る）</a>
       </li>
     
       <li>
-        <a href="/2015/08/01/router/">node路由</a>
+        <a href="/2015/09/12/svg/">svg</a>
       </li>
     
       <li>
-        <a href="/2015/07/11/hello-world/">守一座空城，爱一世愚人</a>
+        <a href="/2015/09/12/hello-world/">守一座空城，爱一世愚人</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/12/beta/">beta版哟</a>
       </li>
     
   </ul>

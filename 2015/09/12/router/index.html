@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Gird， 表格通过主表确认副表内容 | Aircity</title>
+  <title>node路由 | Aircity</title>
   <meta name="author" content="Aircity">
   
-  <meta name="description" content="活用jqGrid">
+  <meta name="description" content="懒得配路由。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Gird， 表格通过主表确认副表内容"/>
+  <meta property="og:title" content="node路由"/>
   <meta property="og:site_name" content="Aircity"/>
 
   
@@ -77,10 +77,10 @@
     <div id="main-col" class="alignleft"><div id="wrapper">
 <div class="prev_next clearfix">
   
-  <a href="/2015/08/05/song/" class="prev" title="【填词】别（悲しみ雪に眠る）">上一篇<span class="xs-hidden">：【填词】别（悲しみ雪に眠る）</span></a>
+  <a href="/2015/09/12/smart/" class="prev" title="母语">上一篇<span class="xs-hidden">：母语</span></a>
   
   
-  <a href="/2015/08/02/svg/" class="next" title="svg">下一篇<span class="xs-hidden">：svg</span></a>
+  <a href="/2015/09/12/git/" class="next" title="git branch">下一篇<span class="xs-hidden">：git branch</span></a>
   
 </div>
 
@@ -102,44 +102,20 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-08-05T05:44:51.877Z"><a href="/2015/08/05/Gird/">2015-08-05</a></time>
+        <time datetime="2015-09-12T06:05:32.152Z"><a href="/2015/09/12/router/">2015-09-12</a></time>
       
       <h1>
         
   
-    <h1 class="title">Gird， 表格通过主表确认副表内容</h1>
+    <h1 class="title">node路由</h1>
   
     
       </h1>
     </header>
     <div class="entry">
       
-        <ol>
-<li><p>html主体</p>
-</li>
-<li><p>javascript内容<br>//先通过jqGrid建两个表对象<br>//两个数组，排除已经在附表中的数组</p>
-<a id="more"></a>
-<p>function subArray(a, b) {</p>
-<pre><code><span class="keyword">var</span> <span class="literal">result</span> = [];
-<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a) {
-    <span class="keyword">if</span> ($.inArray(a[i], b) == -<span class="number">1</span>)
-        <span class="literal">result</span>.push(a[i]);
-}
-<span class="keyword">return</span> <span class="literal">result</span>;
-</code></pre><p> }<br> //提交副表的主键<br>$(“#application”).submit(function (e) {<br> e.preventDefault();<br> var formData = $(“#application”).serialize();<br> var tableData = $(“#sublist”).jqGrid(‘getDataIDs’);<br> console.log(formData);<br> console.log(tableData);<br>});<br>//在colModel中设定key:true确定主键。默认是一个自增量<br>//name: ‘reclaimStorageNo’,<br>//sorttype:’integer’,<br>//key:true,<br>//searchoptions:{sopt:[‘cn’],readonly: false,<br>//dataEvents: [{ type: ‘keypress’,<br>//fn: function (e) {this.value=this.value.replace(/\s+/g,””); } }]}<br>//所选需要的数据填到副表<br>$(“#moveToRight”).click(function () {<br> var group = jQuery(“#list”).jqGrid(‘getGridParam’, ‘selarrrow’);<br> var subgroup = jQuery(“#sublist”).jqGrid(‘getDataIDs’);<br> //剔除数组中重复的部分<br> //do something<br> group = subArray(group, subgroup);<br> var dataRow = [];<br> for (var i = 0; i &lt; group.length; i++) {</p>
-<pre><code><span class="variable"><span class="keyword">var</span> index</span> = group[i];
-<span class="variable"><span class="keyword">var</span> reclaimStorageNo</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"reclaimStorageNo"</span>);
-<span class="variable"><span class="keyword">var</span> productBrand</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"productBrand"</span>);
-<span class="variable"><span class="keyword">var</span> productModel</span> = $(<span class="string">"#list"</span>).getCell(index, <span class="string">"productModel"</span>);
-<span class="variable"><span class="keyword">var</span> row</span> = {};
-row.reclaimStorageNo = reclaimStorageNo;
-row.productBrand = productBrand;
-dataRow.push(row);
-</code></pre><p> }<br> //通过dataRow在副表填数据<br> $(“#sublist”).jqGrid(“addRowData”, “reclaimStorageNo”, dataRow, “first”);<br> //清空所选<br> $(“#list”).jqGrid(“resetSelection”);<br> //按需要排序<br> $(“#sublist”).sortGrid(‘reclaimStorageNo’, true);<br>});<br>//将副表不需要的数据移回<br>jQuery(“#moveToLeft”).click(function () {<br> var selectedRowIds = $(“#sublist”).jqGrid(“getGridParam”, “selarrrow”);<br> var len = selectedRowIds.length;<br> for (var i = 0; i &lt; len; i++) {</p>
-<pre><code>$<span class="params">(<span class="string">"#sublist"</span>)</span>.jqGrid<span class="params">(<span class="string">"delRowData"</span>, selectedRowIds[<span class="number">0</span>])</span>;
-</code></pre><p> }<br>});</p>
-</li>
-</ol>
+        <p>针对利用node和gulp/grunt单目录静态输出，<br>只在nodeJS下develop的情况，so懒得配路由。。。</p>
+<p>router.get(‘*’, function(request, response, next) {<br>  var fileName = path.basename(request.url,’.html’);<br>  response.render(fileName);<br>});</p>
 
       
     </div>
@@ -147,11 +123,6 @@ dataRow.push(row);
       
         
         
-  
-  <div class="tags">
-    <a href="/tags/front-end/">front-end</a>
-  </div>
-
         
       
       <div class="clearfix"></div>
@@ -163,16 +134,16 @@ dataRow.push(row);
 
 <div class="prev_next clearfix">
   
-  <a href="/2015/08/05/song/" class="prev" title="【填词】别（悲しみ雪に眠る）">上一篇<span class="xs-hidden">：【填词】别（悲しみ雪に眠る）</span></a>
+  <a href="/2015/09/12/smart/" class="prev" title="母语">上一篇<span class="xs-hidden">：母语</span></a>
   
   
-  <a href="/2015/08/02/svg/" class="next" title="svg">下一篇<span class="xs-hidden">：svg</span></a>
+  <a href="/2015/09/12/git/" class="next" title="git branch">下一篇<span class="xs-hidden">：git branch</span></a>
   
 </div>
 
 
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-title="Gird， 表格通过主表确认副表内容" data-url="http://aircity.github.io/2015/08/05/Gird/"></div>
+<div class="ds-thread" data-title="node路由" data-url="http://aircity.github.io/2015/09/12/router/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"aircity"};
 (function() {
@@ -260,58 +231,64 @@ var cale = new Calendar("idCalendar", {
         // }
 
         
-            var postdate = new Date("Wed Aug 05 2015 13:44:51 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/Gird/' title='Gird， 表格通过主表确认副表内容'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/Gird/' title='Gird， 表格通过主表确认副表内容'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sun Aug 02 2015 22:04:29 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/02/svg/' title='svg'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/svg/' title='svg'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 13:45:20 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/song/' title='【填词】别（悲しみ雪に眠る）'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/song/' title='【填词】别（悲しみ雪に眠る）'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 13:45:54 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/smart/' title='母语'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/smart/' title='母语'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Aug 01 2015 18:36:06 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/01/router/' title='node路由'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/router/' title='node路由'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Jul 11 2015 21:57:57 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/07/11/hello-world/' title='守一座空城，爱一世愚人'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/hello-world/' title='守一座空城，爱一世愚人'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sat Aug 01 2015 18:37:43 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/01/git/' title='git branch'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/git/' title='git branch'>" + day + "</a>";
             }
     
-            var postdate = new Date("Sun Aug 02 2015 21:58:14 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/02/font/' title='css中文字体'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/font/' title='css中文字体'>" + day + "</a>";
             }
     
-            var postdate = new Date("Wed Aug 05 2015 14:29:16 GMT+0800");
+            var postdate = new Date("Sat Sep 12 2015 14:05:32 GMT+0800");
             if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
                 var day = postdate.getDate();
-                this.Days[day].innerHTML = "<a href='/2015/08/05/beta/' title='beta版哟'>" + day + "</a>";
+                this.Days[day].innerHTML = "<a href='/2015/09/12/beta/' title='beta版哟'>" + day + "</a>";
+            }
+    
+            var postdate = new Date("Sat Sep 12 2015 14:21:22 GMT+0800");
+            if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) {
+                var day = postdate.getDate();
+                this.Days[day].innerHTML = "<a href='/2015/09/12/goto/' title='如如不动'>" + day + "</a>";
             }
     
 
@@ -338,6 +315,8 @@ $$("idCalendarNext").onclick = function(){ cale.NextMonth(); }
   
     <li><a href="/tags/填词/">填词</a><small>1</small></li>
   
+    <li><a href="/tags/江湖/">江湖</a><small>1</small></li>
+  
     <li><a href="/tags/空城/">空城</a><small>1</small></li>
   
   </ul>
@@ -350,39 +329,43 @@ $$("idCalendarNext").onclick = function(){ cale.NextMonth(); }
   <ul class="entry">
     
       <li>
-        <a href="/2015/08/05/beta/">beta版哟</a>
+        <a href="/2015/09/12/goto/">如如不动</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/smart/">母语</a>
+        <a href="/2015/09/12/smart/">母语</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/song/">【填词】别（悲しみ雪に眠る）</a>
+        <a href="/2015/09/12/router/">node路由</a>
       </li>
     
       <li>
-        <a href="/2015/08/05/Gird/">Gird， 表格通过主表确认副表内容</a>
+        <a href="/2015/09/12/git/">git branch</a>
       </li>
     
       <li>
-        <a href="/2015/08/02/svg/">svg</a>
+        <a href="/2015/09/12/font/">css中文字体</a>
       </li>
     
       <li>
-        <a href="/2015/08/02/font/">css中文字体</a>
+        <a href="/2015/09/12/Gird/">Gird， 表格通过主表确认副表内容</a>
       </li>
     
       <li>
-        <a href="/2015/08/01/git/">git branch</a>
+        <a href="/2015/09/12/song/">【填词】别（悲しみ雪に眠る）</a>
       </li>
     
       <li>
-        <a href="/2015/08/01/router/">node路由</a>
+        <a href="/2015/09/12/svg/">svg</a>
       </li>
     
       <li>
-        <a href="/2015/07/11/hello-world/">守一座空城，爱一世愚人</a>
+        <a href="/2015/09/12/hello-world/">守一座空城，爱一世愚人</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/12/beta/">beta版哟</a>
       </li>
     
   </ul>
